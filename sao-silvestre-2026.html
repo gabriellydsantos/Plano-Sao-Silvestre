@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><title>São Silvestre 2026 · Meu plano</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&display=swap">
+<style>
+:root{--bg:#F2F3FB;--card:#fff;--tx:#161838;--mu:#6B6F94;--ln:#E1E3F2;--ac:#E8335E;--go:#D98E00;--gr:#1F9D6B;--or:#E8662B;--bl:#3B6FE0;--pu:#8A52D6;--hero:linear-gradient(135deg,#2A1F6B,#5B2A8F 55%,#E8335E)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10122B;--card:#1A1D41;--tx:#EEF0FF;--mu:#9A9EC9;--ln:#2B2F5E;--ac:#FF5C84;--go:#FFC24A;--gr:#4CD6A0;--or:#FF8A55;--bl:#7CA2FF;--pu:#B58CFF;--hero:linear-gradient(135deg,#231A5E,#4B2380 55%,#C42B58)}}
+:root[data-theme="dark"]{--bg:#10122B;--card:#1A1D41;--tx:#EEF0FF;--mu:#9A9EC9;--ln:#2B2F5E;--ac:#FF5C84;--go:#FFC24A;--gr:#4CD6A0;--or:#FF8A55;--bl:#7CA2FF;--pu:#B58CFF;--hero:linear-gradient(135deg,#231A5E,#4B2380 55%,#C42B58)}
+*{box-sizing:border-box}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+h1,h2,.big{font-family:"Bricolage Grotesque",-apple-system,"Segoe UI",sans-serif;margin:0}
+main{max-width:760px;margin:0 auto;padding:16px 16px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.top h1{font-size:20px;font-weight:800}.top small{color:var(--mu)}
+.ib{border:1px solid var(--ln);background:var(--card);color:var(--tx);border-radius:12px;width:40px;height:40px;font-size:18px;cursor:pointer}
+.hero{background:var(--hero);color:#fff;border-radius:24px;padding:22px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(#ffd36e55,transparent 65%)}
+.big{font-size:84px;font-weight:800;line-height:.9;letter-spacing:-3px}
+.hero p{margin:6px 0 0;opacity:.9}.hero .r{text-align:right;z-index:1}.hero .r b{font-size:22px;font-family:"Bricolage Grotesque",sans-serif}
+section{margin-top:20px}h2{font-size:17px;margin-bottom:10px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:20px;padding:16px}
+.today{border-left:6px solid var(--c,var(--ac))}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--c) 18%,transparent);color:var(--c)}
+.today h3{font:700 20px/1.25 "Bricolage Grotesque",sans-serif;margin:10px 0 6px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--mu);margin:8px 0 12px}.meta b{color:var(--tx)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{border:0;border-radius:14px;padding:12px 18px;font-weight:700;font-size:15px;cursor:pointer;background:var(--ac);color:#fff;transition:transform .15s}
+.btn:active{transform:scale(.96)}.btn.ok{background:var(--gr)}
+input[type=text],input[type=number]{width:74px;padding:10px;border-radius:12px;border:1px solid var(--ln);background:var(--bg);color:var(--tx);font:inherit}
+.stats{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.ring{width:110px;height:110px;transform:rotate(-90deg)}.ring circle{fill:none;stroke-width:10;stroke-linecap:round}
+.ring .bg{stroke:var(--ln)}.ring .fg{stroke:var(--ac);transition:stroke-dashoffset .8s ease}
+.ringw{position:relative}.ringw span{position:absolute;inset:0;display:grid;place-items:center;font:800 22px "Bricolage Grotesque",sans-serif}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:10px}.kv div{background:var(--bg);border-radius:14px;padding:10px 12px}.kv b{display:block;font:800 20px "Bricolage Grotesque",sans-serif}.kv small{color:var(--mu)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.chip{flex:none;border:1px solid var(--ln);background:var(--card);color:var(--tx);border-radius:14px;padding:8px 14px;cursor:pointer;font-weight:600;text-align:center;font-size:13px}
+.chip.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}.chip i{display:block;font-style:normal;font-size:11px;opacity:.7;font-weight:500}
+.day{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;margin-top:10px;padding:12px 14px;border-radius:18px;background:var(--card);border:1px solid var(--ln);transition:opacity .2s}
+.day.done{opacity:.6}.day.now{outline:2px solid var(--ac)}
+.dt{text-align:center;line-height:1.1}.dt b{display:block;font:800 22px "Bricolage Grotesque",sans-serif}.dt small{color:var(--mu)}
+.day p{margin:4px 0 0;font-size:13.5px}.day em{font-style:normal;color:var(--mu);font-size:12.5px}
+.chk{width:42px;height:42px;border-radius:50%;border:2px solid var(--ln);background:transparent;color:#fff;font-size:20px;cursor:pointer;transition:all .2s}
+.day.done .chk{background:var(--gr);border-color:var(--gr)}.day.rest .chk{display:none}
+.kmi{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--mu)}.kmi input{width:58px;padding:6px;text-align:center}
+.bars{display:flex;gap:6px;align-items:flex-end;height:130px}
+.bw{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;height:100%;justify-content:flex-end}
+.bp{display:flex;gap:2px;align-items:flex-end;width:100%;height:100px;justify-content:center}
+.bp i{display:block;width:45%;border-radius:5px 5px 0 0;background:var(--ln);transition:height .6s}.bp i+i{background:var(--ac)}
+.bw small{font-size:10.5px;color:var(--mu)}.bw.on small{color:var(--tx);font-weight:800}
+.set{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.set span{color:var(--mu)}
+footer{margin-top:24px;color:var(--mu);font-size:12px;text-align:center}
+@media(max-width:480px){.big{font-size:68px}.stats{grid-template-columns:1fr;justify-items:center}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+</style></head><body><main>
+<div class="top"><div><h1>São Silvestre 2026</h1><small>Plano de 13 semanas · 15 km</small></div><button class="ib" id="th" aria-label="Alternar tema">◐</button></div>
+<div class="hero"><div><div class="big" id="cd">–</div><p id="cdl">dias para a largada</p></div><div class="r"><b id="pc">–</b><p>seu ritmo de prova</p></div></div>
+<section><h2 id="th2">Hoje</h2><div class="card today" id="today"></div></section>
+<section><h2>Progresso</h2><div class="card stats"><div class="ringw"><svg class="ring" viewBox="0 0 110 110"><circle class="bg" cx="55" cy="55" r="46"/><circle class="fg" id="fg" cx="55" cy="55" r="46" stroke-dasharray="289" stroke-dashoffset="289"/></svg><span id="pct">0%</span></div><div class="kv"><div><b id="kd">0</b><small>km feitos</small></div><div><b id="kp">0</b><small>km planejados</small></div><div><b id="sd">0</b><small>treinos feitos</small></div><div><b id="lg">0</b><small>maior longão</small></div></div></div></section>
+<section><h2>Km por semana</h2><div class="card"><div class="bars" id="bars"></div><small style="color:var(--mu)">Cinza: planejado · Rosa: feito. Toque numa semana para abri-la.</small></div></section>
+<section><h2 id="wt">Semana</h2><div class="chips" id="chips"></div><div id="days"></div></section>
+<section><h2>Seu tempo de 5 km</h2><div class="card set"><input type="number" id="m" min="15" max="60"><span>min</span><input type="number" id="s" min="0" max="59"><span>s — os ritmos de todo o plano se ajustam.</span></div></section>
+<footer>Seus dados ficam salvos só neste aparelho. Faça um treino, marque e o plano acompanha.</footer>
+</main><script>
+const $=s=>document.querySelector(s),key=d=>d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+let S={m:33,s:0,d:{},th:null};try{Object.assign(S,JSON.parse(localStorage.getItem("ss26")||"{}"))}catch(e){}
+const save=()=>{try{localStorage.setItem("ss26",JSON.stringify(S))}catch(e){}};
+const Z={leve:[60,90,"Leve"],prova:[20,35,"Prova"],limiar:[10,20,"Limiar"],"5k":[-5,5,"5K"]};
+const T={F:["Força","var(--pu)"],L:["Leve","var(--gr)"],R:["Descanso","var(--mu)"],Q:["Qualidade","var(--or)"],G:["Longão","var(--bl)"],P:["Prova","var(--go)"]};
+const STR="Força (20–30'): agachamento, afundo, panturrilha, prancha. Ou descanso.",EDU="Corrida leve + 4 acelerações de 20'' no final",SAT="Corrida leve e curta para soltar as pernas",WED="Descanso ou 30' de caminhada/bike bem leve.",LG="Longão leve — ritmo de conversa";
+const W=[[5,"Fartlek: 10' leve + 6x(1' forte / 2' leve) + 10' leve",6,["5k"],4,LG,8,["leve"]],
+[5,"Limiar: 10' leve + 2x8' em ritmo de limiar (rec. 3' trote) + 10' leve",6,["limiar"],4,LG,9,["leve"]],
+[6,"Tiros: 10' leve + 5x3' em ritmo de 5 km (rec. 2' trote) + 10' leve",6,["5k"],5,LG,10,["leve"]],
+[5,"Recuperação: 5 km leves com 6 acelerações de 30''",5,["leve"],4,"Longão curto e leve (semana de descarga)",8,["leve"]],
+[6,"Limiar: 10' leve + 3x8' em ritmo de limiar (rec. 2' trote) + 10' leve",7,["limiar"],5,LG,11,["leve"]],
+[6,"Tiros: 2 km leves + 5x1000 m em ritmo de 5 km (rec. 90'' trote) + 1,5 km leve",9,["5k"],5,"Longão leve — se possível, com algumas subidas",12,["leve"]],
+[7,"Limiar contínuo: 2 km leves + 20' em ritmo de limiar + 1,5 km leve",7,["limiar"],5,LG,13,["leve"]],
+[5,"Recuperação: fartlek leve 6x(1' forte / 2' leve)",6,["5k"],4,"Longão curto e leve (semana de descarga)",10,["leve"]],
+[7,"Específico: 2 km leves + 3x2 km em ritmo de prova (rec. 2' trote) + 1,5 km leve",10,["prova"],5,"Longão: 11 km leves + últimos 3 km em ritmo de prova",14,["leve","prova"]],
+[7,"Específico: 2 km leves + 2x2,5 km em ritmo de prova (rec. 3' trote) + 1,5 km leve",9,["prova"],5,"LONGÃO DE PICO: 14 km leves + últimos 2 km em ritmo de prova",16,["leve","prova"]],
+[6,"Polimento: 2 km leves + 3x1000 m em ritmo de 5 km (rec. 2' trote) + 1,5 km leve",7,["5k"],4,"Longão reduzido, leve",12,["leve"]],
+[5,"Polimento: 2 km leves + 2x1 km em ritmo de prova + 1 km leve",5,["prova"],3,"Rodagem leve e curta — Natal na sexta: descanse bem",6,["leve"]]];
+const D=[],mk=(w,k,t,x,km,z)=>D.push({w,dt:new Date(2026,9,5+7*(w-1)+k),t,x,km:km||0,z});
+W.forEach((r,i)=>{const w=i+1;mk(w,0,"F",STR);mk(w,1,"L",EDU,r[0],["leve"]);mk(w,2,"R",WED);mk(w,3,"Q",r[1],r[2],r[3]);mk(w,4,"R","Descanso completo.");mk(w,5,"L",SAT,r[4],["leve"]);mk(w,6,"G",r[5],r[6],r[7])});
+mk(13,0,"R","Descanso completo.");mk(13,1,"L","4 km leves + 4 acelerações de 20''. Pernas frescas.",4,["leve"]);mk(13,2,"R","Descanso. Retire o kit, separe roupa e tênis já usados e durma cedo.");
+mk(13,3,"P","SÃO SILVESTRE — 15 km. Primeiros 3 km leves, depois ritmo de prova; acelere só nos últimos 3 km. Cuidado com as subidas.",15,["leve","prova"]);
+const DN=["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"],fmt=s=>{s=Math.round(s);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
+const base=()=>(S.m*60+S.s)/5;
+const pace=zs=>zs.map(z=>(zs.length>1?Z[z][2]+" ":"")+fmt(base()+Z[z][0])+"–"+fmt(base()+Z[z][1])).join(" · ");
+const dm=d=>String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0");
+const t0=new Date();t0.setHours(0,0,0,0);
+const find=()=>D.find(x=>key(x.dt)==key(t0));
+let sw=(find()||(t0<D[0].dt?D[0]:D[D.length-1])).w;
+const wk=w=>D.filter(x=>x.w==w),sum=(a,f)=>a.reduce((n,x)=>n+f(x),0),dn=x=>(S.d[key(x.dt)]||{}).km||0;
+function card(x){const k=key(x.dt),o=S.d[k],c=T[x.t][1],rest=x.t=="R";
+return `<div class="day ${o?"done":""} ${rest?"rest":""} ${k==key(t0)?"now":""}" style="--c:${c}" data-k="${k}"><div class="dt"><b>${x.dt.getDate()}</b><small>${DN[x.dt.getDay()]}</small></div><div><span class="pill">${T[x.t][0]}${x.km?" · "+x.km+" km":""}</span><p>${x.x}</p>${x.z?`<em>${pace(x.z)} /km</em>`:""}</div>${rest?"":`<div class="kmi"><button class="chk" aria-label="Marcar como feito">✓</button><input type="text" inputmode="decimal" placeholder="km" value="${o?o.km:""}" aria-label="Km feito"></div>`}</div>`}
+function render(){
+const left=Math.round((new Date(2026,11,31)-t0)/864e5);
+$("#cd").textContent=left>0?left:left==0?"É hoje":"🎉";$("#cdl").textContent=left>0?(left==1?"dia para a largada":"dias para a largada"):left==0?"Boa prova!":"Prova concluída";
+$("#pc").textContent=fmt(base()+27)+" /km";$("#m").value=S.m;$("#s").value=S.s;
+let x=find(),note="Hoje";if(!x){x=t0<D[0].dt?D[0]:D[D.length-1];note=t0<D[0].dt?"Primeiro treino · "+dm(x.dt):"Último treino"}
+const k=key(x.dt),o=S.d[k],c=T[x.t][1];$("#th2").textContent=note;
+$("#today").style.setProperty("--c",c);
+$("#today").innerHTML=`<span class="pill" style="--c:${c}">${T[x.t][0]}</span><h3>${x.x}</h3><div class="meta">${x.km?`<span>Distância <b>${x.km} km</b></span>`:""}${x.z?`<span>Ritmo <b>${pace(x.z)}</b></span>`:""}<span>Semana <b>${x.w}</b> de 13</span></div>${x.t=="R"?"":`<div class="row" data-k="${k}"><button class="btn ${o?"ok":""}" id="tb">${o?"Feito ✓ (desfazer)":"Concluir treino"}</button><input type="text" inputmode="decimal" id="tk" placeholder="km" value="${o?o.km:""}" aria-label="Km feito hoje"></div>`}`;
+const all=D.filter(d=>d.km),kp=sum(all,d=>d.km),kd=sum(D,dn),nd=all.filter(d=>S.d[key(d.dt)]).length;
+$("#kd").textContent=kd.toFixed(1).replace(".0","");$("#kp").textContent=kp;$("#sd").textContent=nd+"/"+all.length;
+$("#lg").textContent=Math.max(0,...D.filter(d=>d.t=="G").map(dn))+" km";
+const p=Math.min(1,kd/kp);$("#pct").textContent=Math.round(p*100)+"%";$("#fg").style.strokeDashoffset=289*(1-p);
+const mx=Math.max(...Array.from({length:13},(_,i)=>sum(wk(i+1),d=>d.km)));
+$("#bars").innerHTML=Array.from({length:13},(_,i)=>{const a=wk(i+1),pl=sum(a,d=>d.km),dd=sum(a,dn);return `<div class="bw ${i+1==sw?"on":""}" data-w="${i+1}"><div class="bp"><i style="height:${pl/mx*100}%"></i><i style="height:${dd/mx*100}%"></i></div><small>${i+1}</small></div>`}).join("");
+$("#chips").innerHTML=Array.from({length:13},(_,i)=>{const a=wk(i+1);return `<button class="chip ${i+1==sw?"on":""}" data-w="${i+1}">Sem ${i+1}<i>${dm(a[0].dt)}</i></button>`}).join("");
+const ph=sw<=4?"Base":sw<=8?"Construção":sw<=10?"Específica":sw<=12?"Polimento":"Semana da prova";
+$("#wt").textContent=`Semana ${sw} · ${ph} · ${sum(wk(sw),d=>d.km)} km`;
+$("#days").innerHTML=wk(sw).map(card).join("");
+const ch=document.querySelector(".chip.on");if(ch&&!render.n){render.n=1;ch.scrollIntoView({inline:"center",block:"nearest"})}}
+const setD=(k,v)=>{if(v==null)delete S.d[k];else S.d[k]={km:v};save();render()};
+const num=v=>{v=parseFloat(String(v).replace(",","."));return isNaN(v)||v<0?null:v};
+document.addEventListener("click",e=>{const w=e.target.closest("[data-w]");if(w){sw=+w.dataset.w;render();return}
+if(e.target.id=="tb"){const x=find()||(t0<D[0].dt?D[0]:D[D.length-1]),k=key(x.dt);setD(k,S.d[k]?null:num($("#tk").value)??x.km);return}
+if(e.target.classList.contains("chk")){const r=e.target.closest(".day"),k=r.dataset.k,x=D.find(d=>key(d.dt)==k);setD(k,S.d[k]?null:x.km)}});
+document.addEventListener("change",e=>{const r=e.target.closest("[data-k]");if(r&&e.target.tagName=="INPUT"){const v=num(e.target.value);setD(r.dataset.k,v)}
+if(e.target.id=="m"||e.target.id=="s"){S.m=Math.min(60,Math.max(15,+$("#m").value||33));S.s=Math.min(59,Math.max(0,+$("#s").value||0));save();render()}});
+$("#th").onclick=()=>{const dk=matchMedia("(prefers-color-scheme:dark)").matches,cur=document.documentElement.dataset.theme||(dk?"dark":"light");S.th=cur=="dark"?"light":"dark";document.documentElement.dataset.theme=S.th;save()};
+if(S.th)document.documentElement.dataset.theme=S.th;
+render();
+</script></body></html>
